@@ -3,24 +3,39 @@ elixir(function(mix){
    mix.sass('app.scss')
 
    .styles([
-       'libs/blog-post.css',
-       'libs/bootstrap.css',
-       'libs/bootstrap.min.css',
-       'libs/dropzone.css',
-       'libs/font-awesome.css',
-       'libs/metisMenu.css',
-       'libs/sb-admin-2.css',
-       'libs/styles.css'
+       'bootstrap.min.css',
+       'bootstrap.css',
+       'mdb.css',
+       'mdb.lite.css',
+       'mdb.lite.min.css',
+       'mdb.min.css',
+       'style.css',
+       'style.min.css',
+       'modules/animations-extended.css',
+       'modules/animations-extended.min.css',
+       'addons/datatables.css',
+       'addons/datatables.min.css'
    ], './public/css/libs.css')
 
    .scripts([
-       'libs/jquery.js',
-       'libs/bootstrap.js',
-       'libs/bootstrap.min.js',
-       'libs/metisMenu.js',
-       'libs/dropzone.js',
-       'libs/sb-admin-2.js',
-       'libs/scripts.js'
+       'jquery-3.3.1.min.js',
+       'bootstrap.js',
+       'bootstrap.min.js',
+       'mdb.js',
+       'mdb.min.js',
+       'popper.min.js',
+       'modules/chart.js',
+       'modules/default-file-input.js',
+       'modules/enhanced-modals.js',
+       'modules/forms-free.js',
+       'modules/jquery.easing.js',
+       'modules/scrolling-navbar.js',
+       'modules/velocity.js',
+       'modules/velocity.min.js',
+       'modules/waves.js',
+       'modules/wow.js',
+       'addons/datatables.js',
+       'addons/datatables.min.js',
    ],'./public/js/libs.js')
 
 });

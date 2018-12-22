@@ -12,5 +12,10 @@
 */
 
 Route::get('/admin', function () {
-    return view('layouts.admin');
+    return view('admin.dashboard.index');
 });
+Route::get('/dashboard', function () {
+    return view('admin.dashboard.index');
+});
+
+Route::resource('post', 'PostController');
