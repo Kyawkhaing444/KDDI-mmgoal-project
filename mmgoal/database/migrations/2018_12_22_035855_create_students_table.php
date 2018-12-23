@@ -15,15 +15,16 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('password');
-            $table->string('email');
-            $table->string('phone_number');
-            $table->string('address');
-            $table->string('specification');
-            $table->string('photoURL');
-            $table->string('isAdmin');
-            $table->string('coin');
+            $table->string('student_no')->default("");
+            $table->string('name')->default("");
+            $table->string('password')->default("");
+            $table->string('email')->default("");
+            $table->string('phone_number')->default("");
+            $table->string('address')->default("");
+            $table->string('specification')->default("");
+            $table->string('photoURL')->default("");
+            $table->string('isAdmin')->default("NO");
+            $table->string('coin')->default("");
             $table->timestamps();
         });
     }

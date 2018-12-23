@@ -80,10 +80,10 @@ position:absolute;
       </a>
 
       <div class="list-group list-group-flush">
-        <a href="dashboard" class="list-group-item active waves-effect">
+        <a href="dashboard" class="list-group-item waves-effect">
           <i class="fas fa-chart-pie mr-3"></i>Dashboard
         </a>
-        <a href="student" class="list-group-item list-group-item-action waves-effect">
+        <a href="student" class="list-group-item list-group-item-action active waves-effect">
           <i class="fas fa-user mr-3"></i>Student</a>
         <a href="magazine" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-table mr-3"></i>Magazine</a>
@@ -105,7 +105,13 @@ position:absolute;
   </header>
   <!--Main Navigation-->
 
- @yield('content')
+  <main class="pt-5 mx-lg-5">
+
+   @yield('content')
+
+  </main>
+
+
 
   <!--Footer-->
   <footer class="page-footer text-center font-small primary-color-dark darken-2 mt-4 wow fadeIn">

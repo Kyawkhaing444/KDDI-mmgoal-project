@@ -10,12 +10,19 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::resource('dashboard', 'DashboardController');
 
-Route::get('/admin', function () {
-    return view('admin.dashboard.index');
-});
-Route::get('/dashboard', function () {
-    return view('admin.dashboard.index');
-});
+Route::resource('student', 'StudentController');
 
-Route::resource('post', 'PostController');
+Route::resource('event', 'EventController');
+
+Route::resource('group', 'GroupController');
+
+Route::resource('chat', 'ChatController');
+
+Route::resource('q&a', 'QnaController');
+
+Route::resource('admin', 'AdminController');
+
+
+

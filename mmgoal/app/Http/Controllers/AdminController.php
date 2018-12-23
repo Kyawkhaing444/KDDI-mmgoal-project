@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Student;
 use Illuminate\Http\Request;
 
-class StudentController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-       $student = Student::all();
-       return view('AdminDashboard.student.index',compact('student'));
+        //
     }
 
     /**
@@ -36,35 +34,16 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-
-            'name'=>'required',
-
-
-          ]);
-
-        $input = $request->all();
-
-        if($file = $request->file('photoURL')){
-
-            $name = $file->getClientOriginalName();
-            $file->move('images',$name);
-            $input['photoURL'] = $name;
-
-         }
-
-        Student::create($input);
-
-        return redirect('student');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Student  $student
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Student $student)
+    public function show($id)
     {
         //
     }
@@ -72,23 +51,22 @@ class StudentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Student  $student
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Student $student)
+    public function edit($id)
     {
-        $student = Student::find($student);
-        return view('AdminDashboard.student.edit' , compact('student'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Student  $student
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Student $student)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -96,10 +74,10 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Student  $student
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Student $student)
+    public function destroy($id)
     {
         //
     }
