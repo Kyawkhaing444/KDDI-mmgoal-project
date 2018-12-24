@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Hash;
 
 class StudentController extends Controller
 {
@@ -44,7 +46,6 @@ class StudentController extends Controller
           ]);
 
         $input = $request->all();
-
         if($file = $request->file('photoURL')){
 
             $name = $file->getClientOriginalName();
@@ -53,7 +54,16 @@ class StudentController extends Controller
 
          }
 
-        Student::create($input);
+         student::create([
+            'name' => $input['name'],
+            'email' => $input['email'],
+            'phone_number' => $input['phone_number'],
+            'student_no' => $input['student_no'],
+            'specification' => $input['specification'],
+            'address' => $input['address'],
+            'photoURL' => $input['photoURL'],
+            'password' => Hash::make($input['password']),
+        ]);
 
         return redirect('student');
     }
@@ -90,7 +100,19 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        //
+        $input = $request->all();
+
+        if($file = $request->file('photoURL')){
+
+            $name = $file->getClientOriginalName();
+            $file->move('images',$name);
+            $input['photoURL'] = $name;
+
+        }
+
+        Student::whereId($student->id)->first()->update($input);
+
+        return redirect('student');
     }
 
     /**
@@ -99,8 +121,11 @@ class StudentController extends Controller
      * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Student $student)
+    public function destroy($student)
     {
-        //
+       $s = Student::findOrfail($student);
+       $s->delete();
+
+       return redirect('student');
     }
 }

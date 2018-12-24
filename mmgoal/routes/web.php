@@ -12,7 +12,7 @@
 */
 Route::resource('dashboard', 'DashboardController');
 
-Route::resource('student', 'StudentController');
+// Route::resource('student', 'StudentController');
 
 Route::resource('event', 'EventController');
 
@@ -23,6 +23,16 @@ Route::resource('chat', 'ChatController');
 Route::resource('q&a', 'QnaController');
 
 Route::resource('admin', 'AdminController');
+
+
+Route::resource('home', 'HomeController');
+
+
+Route::get('student/{student}/delete','StudentController@destroy');
+Route::get('student','StudentController@index');
+Route::post('student','StudentController@store');
+Route::get('student/{id}','StudentController@edit');
+Route::put('student/{id}','StudentController@update');
 
 
 

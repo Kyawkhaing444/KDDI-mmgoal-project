@@ -1,4 +1,4 @@
-@extends('layouts.student')
+@extends('layouts.admin.student')
 
 @section('content')
 
@@ -33,7 +33,10 @@
             @foreach ($student as $s)
 
 
-                {!! Form::open(['method'=>'POST','action'=>'StudentController@store','files'=>true]) !!}
+                {!! Form::model($s,['method'=>'POST','action'=>['StudentController@update',$s->id],'files'=>true]) !!}
+
+                {!! Form::hidden('_method', 'PATCH') !!}
+
                 <div class="input-group mb-3" style="margin-top: 32px;">
 
                         <div class="input-group mb-3">
@@ -41,42 +44,42 @@
                                   <span class="input-group-text" id="basic-addon9"><i class="fas fa-user"></i></span>
                                 </div>
 
-                               {!! Form::text('student_no',  $s->student_no,['class'=>'form-control']) !!}
+                               {!! Form::text('student_no',$s->student_no,['class'=>'form-control']) !!}
 
                               </div>
 
                         <div class="input-group-prepend">
                           <span class="input-group-text" id="basic-addon1"> <i class="fas fa-user"></i> </span>
                         </div>
-                        {!! Form::text('student_no', {{ $s->name }} ,['class'=>'form-control']) !!}
+                        {!! Form::text('name',$s->name,['class'=>'form-control']) !!}
                       </div>
 
                       <div class="input-group mb-3">
                             <div class="input-group-prepend">
                               <span class="input-group-text" id="basic-addon2"><i class="fas fa-at"></i></span>
                             </div>
-                            {!! Form::text('email', {{ $s->email }} ,['class'=>'form-control']) !!}
+                            {!! Form::text('email',$s->email,['class'=>'form-control']) !!}
                           </div>
 
                           <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                   <span class="input-group-text" id="basic-addon3"><i class="fas fa-phone"></i></span>
                                 </div>
-                                {!! Form::text('phone_number', {{ $s->phone_number }} ,['class'=>'form-control']) !!}
+                                {!! Form::text('phone_number',$s->phone_number,['class'=>'form-control']) !!}
                               </div>
 
                               <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                       <span class="input-group-text" id="basic-addon5"><i class="fas fa-book"></i></span>
                                     </div>
-                        {!! Form::text('specification', {{ $s->specification }} ,['class'=>'form-control']) !!}
+                        {!! Form::text('specification',$s->specification,['class'=>'form-control']) !!}
                                   </div>
 
                                   <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                           <span class="input-group-text" id="basic-addon6"><i class="fas fa-address-book"></i></span>
                                         </div>
-                                        {!! Form::text('address', {{ $s->address }} ,['class'=>'form-control']) !!}
+                                        {!! Form::text('address',$s->address,['class'=>'form-control']) !!}
                                       </div>
 
                                       <div class="input-default-wrapper mt-3">
@@ -92,24 +95,6 @@
 
                                       </div>
 
-                                      <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                              <span class="input-group-text" id="basic-addon7"><i class="fas fa-lock"></i></span>
-                                            </div>
-
-                                           {!! Form::password('password', {{ $s->password }} , ['class'=>'form-control']) !!}
-
-                                          </div>
-
-                                          <div class="input-group mb-3">
-                                                <div class="input-group-prepend">
-                                                  <span class="input-group-text" id="basic-addon8"><i class="fas fa-lock"></i></span>
-                                                </div>
-
-                                                {!! Form::password('retypepassword', ['class'=>'form-control','placeholder'=>'Retype Password']) !!}
-
-                                              </div>
-
                                               <div class="justify-content-center ">
                                                     <button type="submit" class="btn btn-success waves-effect btn-md" style="size: 50px;padding-right: 300px ; padding-left:300px;
 
@@ -117,7 +102,7 @@
                                                     margin-left: 100px;
                                                     margin-right: 64px;
 
-                                                    "  >Add Student</button>
+                                                    "  >Upadte Student</button>
                                                   </div>
 
 

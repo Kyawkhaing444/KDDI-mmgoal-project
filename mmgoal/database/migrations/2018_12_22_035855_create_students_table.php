@@ -17,7 +17,7 @@ class CreateStudentsTable extends Migration
             $table->increments('id');
             $table->string('student_no')->default("");
             $table->string('name')->default("");
-            $table->string('password')->default("");
+            $table->string('password');
             $table->string('email')->default("");
             $table->string('phone_number')->default("");
             $table->string('address')->default("");
@@ -30,7 +30,7 @@ class CreateStudentsTable extends Migration
     }
 
     /**
-     * Reverse the migrations.
+     * Reverse the migrations
      *
      * @return void
      */

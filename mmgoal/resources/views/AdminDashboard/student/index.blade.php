@@ -1,4 +1,4 @@
-@extends('layouts.student')
+@extends('layouts.admin.student')
 
 @section('content')
 
@@ -175,7 +175,7 @@
                           <td>{{ $s->specification }}</td>
                           <td>{{ $s->coin }}</td>
                           <td><a class="btn btn-warning waves-effect btn-small" href="student/{{ $s->id }}/edit" style="padding: 8px 12px 8px 12px;margin-top: -10px">Edit</a></td>
-                          <td><a class="btn btn-danger waves-effect btn-small" href="student/{{ $s->id }}" style="padding: 8px 12px 8px 12px;margin-top: -10px">Delete</a></td>
+                          <td><a class="btn btn-danger waves-effect btn-small" href="student/{{ $s->id }}/delete"  style="padding: 8px 12px 8px 12px;margin-top: -10px"><i class="fas fa-trash"></i></a></td>
                         </tr>
                       </tbody>
                 @endforeach

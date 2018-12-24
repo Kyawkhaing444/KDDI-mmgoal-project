@@ -14,7 +14,9 @@ elixir(function(mix){
        'modules/animations-extended.css',
        'modules/animations-extended.min.css',
        'addons/datatables.css',
-       'addons/datatables.min.css'
+       'addons/datatables.min.css',
+       'home/style.css',
+       'home/style.min.css',
    ], './public/css/libs.css')
 
    .scripts([
